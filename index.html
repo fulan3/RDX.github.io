@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>HOME | RDZ</title>
+        <link rel="stylesheer" href="a.css">
+    </head>
+
+    <body>
+
+        <header>
+        <nav>
+            <ul>
+                <li><a href="data/">BERANDA</a></li>
+                <li><a href="data/tentang.html">TENTANG</a></li>
+                <li><a href="">KONTAK</a></li>
+            </ul>
+        </nav>
+        </header>
+
+        <div class="salam">
+            <p class="blinking-text">Assalamualaikum Wr.Wb</p>
+        </div>
+
+        <div class="atas">
+            <h1>WELCOME</h1>
+            <h2>TO MY WEBSITE</h2>
+            <h3><p>Salam! Saya Rudi H, seorang profesional di bidang Rebahan. Saya memiliki keahlian dalam Menghalu. Saya sangat antusias dan berkomitmen untuk menghasilkan karya mimpi yang indah serta memberikan nilai tambah dalam setiap halu yang saya kerjakan.</p></h3>
+            <p></p>
+        </div>
+
+        <button id="openPopup">MINAT</button>
+
+        <div class="popup" id="popup">
+            <div class="popup-content">
+                <span class="close" id="closePopup">&times;</span>
+                <h2>Whatapp Saya</h2>
+                <p class="typing-text">08210000000</p>
+            </div>
+        </div>
+
+        <footer>
+          <p>&copy; 2023 Di Bantu Ai</p>
+        </footer>
+
+    </body>
+</html>
+<style>
+    body {
+        background-color: beige;
+        margin: 0;
+        padding: 0;
+    }
+    header {
+        padding: 20px;
+        text-align: center;
+    }
+    nav ul {
+        list-style: none;
+    }
+    nav ul li {
+        display: inline;
+        margin-right: 30px;
+    }
+    nav ul li a {
+        color: black;
+        text-decoration: none;
+    }
+    nav ul li a:hover {
+        background-color: #ffbc04;
+    }
+    div.salam {
+        text-align: center;
+        color: aliceblue;
+        background-color: black;
+        padding: 7px;       
+    }
+    div.atas {
+        text-align: center;
+    }
+    h1 {
+        
+        font-size: 80px;
+        margin: 10px;
+        height: 70px;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    }
+    h2 {
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+    h3 { 
+        padding: 1px 3px;
+        font-family: 'Courier New', Courier, monospace;
+    }
+    
+    @keyframes 
+    blink {
+    0% {
+        opacity: 1;
+    }
+        50% {
+        opacity: 0;
+    }
+        100% {
+        opacity: 1;
+    }
+}
+
+footer {
+  background-color: #000000;
+  color: white;
+  text-align: center;
+  padding: 3px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.blinking-text {
+  animation: blink 1s infinite;
+}
+
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 5px;
+  z-index: 999;
+}
+
+.popup-content {
+  text-align: center;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  background-color: #000000;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 100px;
+  text-align: center; /* Properti untuk membuat teks rata tengah */
+  display: block; /* Membuat tombol menjadi blok agar properti text-align berfungsi */
+  margin: 0 auto; /* Mengatur margin secara otomatis agar tombol berada di tengah */
+}
+
+button:hover {
+  background-color: #727374;
+}
+
+/* Animasi untuk efek mengetik */
+.typing-text {
+  overflow: hidden; /* Membuat teks yang keluar dari area tersembunyi */
+  border-right: .15em solid rgb(114, 114, 114); /* Garis imitasi cursor mengetik */
+  white-space: nowrap; /* Mencegah perataan teks ke bawah */
+  margin: 0 auto; /* Menengahkan teks */
+  letter-spacing: .15em; /* Jarak antar huruf */
+  animation: typing 3s steps(40, end), blink-caret .75s step-end infinite; /* Animasi mengetik dan cursor */
+}
+
+/* Keyframes untuk animasi mengetik */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* Keyframes untuk animasi cursor */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: rgb(0, 0, 0) }
+}
+
+img {
+    background-image: url(DSCF8274copy2.jpg)
+    
+}
+
+</style>
+
+<script>
+    document.getElementById("openPopup").addEventListener("click", function() {
+  document.getElementById("popup").style.display = "block";
+});
+
+document.getElementById("closePopup").addEventListener("click", function() {
+  document.getElementById("popup").style.display = "none";
+});
+
+// bagian texs seng melaxu
+const text = ".      :v";
+
+// Variabel mengakses elemen HTML teks ngetk
+const typingText = document.querySelector('.typing-text');
+
+let i = 0;
+function typeWriter() {
+  if (i < text.length) {
+    typingText.textContent += text.charAt(i);
+    i++;
+    setTimeout(typeWriter, 100);
+  }
+}
+
+typeWriter();
+
+</script>
